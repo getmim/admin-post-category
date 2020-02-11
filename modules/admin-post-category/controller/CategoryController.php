@@ -115,7 +115,7 @@ class CategoryController extends \Admin\Controller
 
         $categories = PCategory::get($cond, $rpp, $page, ['name'=>true]) ?? [];
         if($categories)
-            $categories = Formatter::formatMany('post-category', $categories, ['user']);
+            $categories = Formatter::formatMany('post-category', $categories, ['user', 'parent']);
 
         $params               = $this->getParams('Post Category');
         $params['categories'] = $categories;
