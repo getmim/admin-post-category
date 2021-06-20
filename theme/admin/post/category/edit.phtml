@@ -42,6 +42,10 @@
                 <div class="card">
                     <div class="card-body">
                         <?= $this->partial('site-meta/meta'); ?>
+                        <?php if(module_exists('post-category-logo')): ?>
+                            <hr>
+                            <?= $form->field('logo') ?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'admin-post-category',
-    '__version' => '0.0.1',
+    '__version' => '0.1.0',
     '__git' => 'git@github.com:getmim/admin-post-category.git',
     '__license' => 'MIT',
     '__author' => [
@@ -38,7 +38,11 @@ return [
                 'admin-post' => NULL 
             ]
         ],
-        'optional' => []
+        'optional' => [
+            [
+                'post-category-logo' => NULL
+            ]
+        ]
     ],
     'autoload' => [
         'classes' => [
@@ -152,6 +156,15 @@ return [
                 ],
                 'meta-schema' => [
                     'options' => ['ItemList' => 'ItemList']
+                ],
+                'logo' => [
+                    'label' => 'Logo',
+                    'type' => 'image',
+                    'form' => 'std-image',
+                    'modules' => ['post-category-logo'],
+                    'rules' => [
+                        'upload' => TRUE
+                    ]
                 ]
             ],
             'admin.post-category.index' => [
